@@ -157,9 +157,11 @@ print(colors) # ['red', 'blue', 'black']
 ```
 
 * 列表中插入元素, 使用 insert(索引, '新值')
+```
 words = ['A','B','C']
 words.insert(1, 'D')
 print(words) # ['A', 'D', 'B', 'C']
+```
 
 * 從列表中刪除元素, 使用 del 列表名稱[索引]
 ```
