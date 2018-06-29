@@ -41,7 +41,7 @@ print("hello world") # hello world
 * 換行符號(\n), 添加空白(\t)
 ```
 print('\tPython\nLanguage')
-``` 
+```
 ```
 	Python
 Language
@@ -60,8 +60,64 @@ Python Language
 PythonLanguage
 ```
 
+### 2-4 數字
 
+* 整數四則運算, 加(+)、 減(-)、 乘(＊)、 除(/)  
+```
+print(4+2) # 6
+print(4-2) # 2
+print(4*2) # 8
+print(4/2) # 2
+```
 
+* 乘方 (＊＊)　　
+```
+print(3**3) # 27
+```
 
+* 浮點數, 直接宣告即可
+```
+number = 0.3
+print(number) # 0.3
+print(number+2) # 2.3
+print(number*2) # 0.6
+```
 
+* 使用 str()
+```
+age = '30'
+print('Happy' + str(str) + 'rd Birthday')
+# Happy 30rd Birthday
+```
 
+### 2-5 註釋
+* 單行註釋使用井字符號(#)
+```
+#這是一行註釋
+```
+
+### 2-6 Python 之禪
+```
+import this
+```
+```
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+```
