@@ -121,3 +121,61 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 ```
+
+## 第三章 列表簡介
+
+### 3-1 列表是甚麼
+
+* 列表使用中括號([])表示
+```
+colors = ['red', 'blue', 'white', 'black']
+print(colors)
+```
+```
+['red', 'blue', 'white', 'black']
+```
+
+* 訪問列表元素, 使用 " 變數名稱[索引編號] ", ※索引邊號從 0 開始
+```
+colors = ['red', 'blue', 'white', 'black']
+print(colors[0]) # red
+```
+
+### 3-2 修改、添加和刪除元素
+* 修改, 直接呼叫賦值 "變數[索引編號]=新值 "
+```
+colors = ['red', 'blue']
+colors[1] = 'white'
+print(colors) # ['red', 'white']
+```
+
+* 列表中添加元素, 使用 append('新值')
+```
+colors = ['red', 'blue']
+colors.append('black')
+print(colors) # ['red', 'blue', 'black']
+```
+
+* 列表中插入元素, 使用 insert(索引, '新值')
+words = ['A','B','C']
+words.insert(1, 'D')
+print(words) # ['A', 'D', 'B', 'C']
+
+* 從列表中刪除元素, 使用 del 列表名稱[索引]
+```
+words = ['A','B','C']
+del words[1]
+print(words) # ['A', 'C']
+```
+
+* 使用 pop() 刪除元素, pop()是將最後一筆元素刪除並回傳刪除的元素, 故可以使用變量承接
+```
+words = ['A', 'D', 'E']
+item = words.pop()
+print(words)
+print(item)
+```
+```
+['A', 'D']
+E
+```
