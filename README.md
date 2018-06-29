@@ -170,7 +170,7 @@ del words[1]
 print(words) # ['A', 'C']
 ```
 
-* 使用 pop() 刪除元素, pop()是將最後一筆元素刪除並回傳刪除的元素, 故可以使用變量承接
+* 使用 pop() 刪除元素, pop() 是將最後一筆元素刪除並回傳刪除的元素, 故可以使用變量承接
 ```
 words = ['A', 'D', 'E']
 item = words.pop()
@@ -181,3 +181,68 @@ print(item)
 ['A', 'D']
 E
 ```
+
+* 使用 pop(索引) 刪除元素, pop() 可以指定要移除的元素並回傳該元素
+```
+words = ['A', 'D', 'E']
+item = words.pop(1)
+print(words)
+print(item)
+```
+```
+['A', 'E']
+D
+```
+
+* 根據值刪除元素, 使用 remove('值')
+```
+colors = ['red', 'black', 'white']
+colors.remove('black')
+print(colors)
+```
+```
+['red', 'white']
+```
+
+### 3-3 組織列表
+
+* 使用方法 sort() 進行永久排續
+```
+cars = ['BMW', 'Toyota', 'Benz', 'Subaru', 'Audi']
+cars.sort()
+print(cars)
+```
+```
+['Audi', 'BMW', 'Benz', 'Subaru', 'Toyota']
+```
+
+* 使用方法 sorted() 進行臨時排序
+```
+cars = ['BMW', 'Toyota', 'Benz', 'Subaru', 'Audi']
+print(sorted(cars))
+print(cars)
+```
+['Audi', 'BMW', 'Benz', 'Subaru', 'Toyota']
+['BMW', 'Toyota', 'Benz', 'Subaru', 'Audi']
+```
+```
+
+* 使用方法 reverse() 進行列表反轉
+```
+cars = ['BMW', 'Toyota', 'Benz', 'Subaru', 'Audi']
+cars.reverse()
+print(cars)
+```
+```
+cars = ['BMW', 'Toyota', 'Benz', 'Subaru', 'Audi']
+```
+
+* 使用方法 len(列表名稱) 取得列表長度
+```
+cars = ['BMW', 'Toyota', 'Benz', 'Subaru', 'Audi']
+print(len(cars)) # 5
+```
+
+* 使用列表的注意事項
+** 使用索引必須在有效的長度內
+** 索引從 0 開始計算
