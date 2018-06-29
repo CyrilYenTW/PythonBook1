@@ -25,29 +25,30 @@ message = 'hello world'
 print(message.title()) # Hello World
 print(message.upper()) # HELLO WORLD
 print(message.lower()) # hello world
-```  
-  
+```
+<br>
 * 使用 單引號('') 或 雙引號("") 將字串包起來  
 ```
 print('hello world') # hello world
 print("hello world") # hello world
 ```
-
+<br>
 * 合併字串使用加號(+)
 ```
  print('I' + ' Love' + ' Python') # I Love Python
 ```  
-  
+<br> 
 * 換行符號(\n), 添加空白(\t)
 ```
 print('\tPython\nLanguage')
-```  
+``` 
+<br> 
 結果
 ```
 	Python
 Language
 ```  
-  
+<br>
 * 刪除空白, 刪除右空白 rstrip(), 刪除左空白 lstrip(), 刪除左右空白 strip()
 ```
 message = ' Python '
@@ -55,13 +56,14 @@ print(message.rstrip()+'Language')
 print(message.lstrip()+'Language')
 print(message.strip()+'Language')
 ```  
-  
+<br>
 結果
 ```
  PythonLanguage
 Python Language
 PythonLanguage
-```  
+```
+<br>
 
 
 
