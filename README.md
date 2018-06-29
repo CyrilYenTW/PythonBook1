@@ -3,12 +3,12 @@
 
 ## 第一章 起步
 * 開發環境
-因為有兩台電腦, 沒有一直在同一個環境下學習 Python
-所以開發環境為 Windows 10、 OSX
+因為有兩台電腦, 沒有一直在同一個環境下學習 Python  
+所以開發環境為 Windows 10、 OSX  
 
 * 使用軟體
-Sublime Text 3
-Git
+Sublime Text 3  
+Git  
 
 
 
