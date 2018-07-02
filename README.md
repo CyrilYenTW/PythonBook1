@@ -246,3 +246,23 @@ print(len(cars)) # 5
 * 使用列表的注意事項  
 　　　使用索引必須在有效的長度內  
 　　　索引從 0 開始計算  
+
+
+## 第四章 操作列表
+
+### 4-1 遍历整个列表
+
+* 使用 for 迴圈循環打定
+```
+countries = ['Taiwan', 'Japan', 'Korea']
+
+for country in countries:
+	print(country)
+
+```
+```
+Taiwan
+Japan
+Korea
+```
+

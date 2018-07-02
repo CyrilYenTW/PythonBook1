@@ -93,3 +93,49 @@ print(name + '. You can eat!!')
 
 del names[1]
 del names[0]
+
+
+'''
+3-8 放眼世界 ：想出至少5个你渴望去旅游的地方。
+'''
+# 将这些地方存储在一个列表中，并确保其中的元素不是按字母顺序排列的。
+countries = ['Taiwan', 'Japan', 'Korea', 'Italy', 'China']
+
+# 按原始排列顺序打印该列表。不要考虑输出是否整洁的问题，只管打印原始Python列表。
+print(countries)
+
+# 使用sorted() 按字母顺序打印这个列表，同时不要修改它。
+print(sorted(countries))
+
+# 再次打印该列表，核实排列顺序未变。
+print(countries)
+
+# 使用sorted() 按与字母顺序相反的顺序打印这个列表，同时不要修改它。
+temp = sorted(countries)
+temp.reverse()
+print(temp)
+
+# 再次打印该列表，核实排列顺序未变。
+print(countries)
+
+# 使用reverse() 修改列表元素的排列顺序。打印该列表，核实排列顺序确实变了。
+countries.reverse()
+print(countries)
+
+# 使用reverse() 再次修改列表元素的排列顺序。打印该列表，核实已恢复到原来的排列顺序。
+countries.reverse()
+print(countries)
+
+# 使用sort() 修改该列表，使其元素按字母顺序排列。打印该列表，核实排列顺序确实变了。
+countries.sort()
+print(countries)
+
+# 使用sort() 修改该列表，使其元素按与字母顺序相反的顺序排列。打印该列表，核实排列顺序确实变了。
+countries.reverse()
+print(countries)
+
+
+'''
+3-9 晚餐嘉宾 ：在完成练习3-4~练习3-7时编写的程序之一中，使用len() 打印一条消息，指出你邀请了多少位嘉宾来与你共进晚餐。
+'''
+print('Country Count => ' + str(len(countries)));
