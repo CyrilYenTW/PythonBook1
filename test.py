@@ -1,6 +1,2 @@
-
-
-for temp in range(1, 5):
-	print(temp)
-
-	print('x')
+number = list(range(1, 6))
+print(number)

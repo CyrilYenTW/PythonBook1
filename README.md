@@ -295,7 +295,7 @@ I want to go to Korea!!
 I'm no money!!
 ```
 
-## 4-2 常見的缩进错误
+### 4-2 常見的缩进错误
 
 * 忘記缩进
 ```
@@ -323,3 +323,62 @@ for country in countries # 少了冒號
 print(country)
 ```
 
+### 4-3 创建数值列表
+
+* 使用函數 range(start, stop[)
+```
+for num in range(1, 6):
+	print(num)
+```
+```
+1
+2
+3
+4
+5
+```
+
+* 使用函數 range(start, stop[, step])
+```
+for num in range(1, 6, 2):
+	print(num)
+
+```
+```
+1
+3
+5
+```
+
+* 使用 list() 創建數字列表
+```
+number = list(range(1, 6))
+print(number)
+```
+```
+[1, 2, 3, 4, 5]
+```
+
+*  对数字列表执行简单的统计计算, min()、max()、sum()
+```
+digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+print(min(digits))
+print(max(digits))
+print(sum(digits))
+
+```
+```
+0
+9
+45
+```
+
+* 列表解析
+```
+squres  = [value**3 for value in range(1, 11)]
+print(squres)
+```
+```
+[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+```
