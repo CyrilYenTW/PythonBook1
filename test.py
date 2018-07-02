@@ -1,4 +1,6 @@
-countries = ['Taiwan', 'Japan', 'Korea']
 
-for country in countries:
-	print(country)
+
+for temp in range(1, 5):
+	print(temp)
+
+	print('x')

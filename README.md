@@ -266,3 +266,60 @@ Japan
 Korea
 ```
 
+* 在 for 循環中執行更多的操作
+```
+countries = ['Taiwan', 'Japan', 'Korea']
+prefix = 'I want to go to '
+for country in countries:
+	print(prefix + country + '!!')
+```
+```
+I want to go to Taiwan!!
+I want to go to Japan!!
+I want to go to Korea!!
+```
+
+* 在for 循环结束后执行一些操作, "缩进是重點"
+```
+countries = ['Taiwan', 'Japan', 'Korea']
+prefix = 'I want to go to '
+for country in countries:
+	print(prefix + country + '!!')
+
+print("I'm no money!!")
+```
+```
+I want to go to Taiwan!!
+I want to go to Japan!!
+I want to go to Korea!!
+I'm no money!!
+```
+
+## 4-2 常見的缩进错误
+
+* 忘記缩进
+```
+for country in countries:
+print(country)
+```
+
+* 不必要的缩进
+```
+print('A')
+	print(B)
+```
+
+* 循還後不必要的缩进
+```
+for country in countries:
+	print(country)
+
+	print('Done') # 空一行並不代表 for 迴圈的結束
+```
+
+* 遺漏冒號
+```
+for country in countries # 少了冒號
+print(country)
+```
+
