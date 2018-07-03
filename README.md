@@ -581,3 +581,27 @@ color is White
 I don't know this
 I don't know this
 ```
+
+
+## 第六章 字典
+
+### 6-1 一個簡單的字典
+
+* 形式 { key:value }
+```
+PC = {'CPU': 'I7', 'RAM': '16GB'}
+
+print(PC)
+print(PC['CPU'])
+print(PC['RAM'])
+```
+```
+{'CPU': 'I7', 'RAM': '16GB'}
+I7
+16GB
+```
+
+### 6-2 使用字典
+
+
+

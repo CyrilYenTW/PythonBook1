@@ -1,5 +1,5 @@
+PC = {'CPU': 'I7', 'RAM': '16GB'}
 
-users = ['Admin', 'Mingy', 'Eric', 'Cyril', 'Joel']
-
-print('admin' in [user.lower() for user in users])
-
+print(PC)
+print(PC['CPU'])
+print(PC['RAM'])
