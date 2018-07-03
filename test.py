@@ -1,2 +1,5 @@
-number = list(range(1, 6))
-print(number)
+fruits = ('Apple', 'Strawberry', 'Watermelon', 'Banana', 'Kiwi')
+print(fruits)
+
+fruits = ('Banana', 'Kiwi')
+print(fruits)
