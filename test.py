@@ -1,5 +1,5 @@
-fruits = ('Apple', 'Strawberry', 'Watermelon', 'Banana', 'Kiwi')
-print(fruits)
 
-fruits = ('Banana', 'Kiwi')
-print(fruits)
+users = ['Admin', 'Mingy', 'Eric', 'Cyril', 'Joel']
+
+print('admin' in [user.lower() for user in users])
+

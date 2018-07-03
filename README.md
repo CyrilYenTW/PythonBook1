@@ -453,3 +453,131 @@ print(fruits)
 * 缩进, PEP8 建議每級缩进使用 4個空格
 * 行長, Python程序員建議每航不超過 80字符, 注釋不超過 72字符
 * 空行, 程序的不同部分應該使用空行分開, 盡量不使用一行以上的空行做分隔
+
+
+## 第五章 if 语句
+
+### 5-1 一個簡單的範例
+* 使用 if、elif、else
+```
+colors = ['Red', 'Blue', 'Black']
+
+for color in colors:
+	if color == 'Red':
+		print('Is ' + color + '.')
+	elif color == 'Black':
+		print('Is ' + color + '.')
+	else:
+		print("I don't know this!!")
+```
+```
+Is Red.
+I don't know this!!
+Is Black.
+```
+
+### 5-2 條件測試
+* 簡單的邏輯判斷
+```
+5 == 6 # False
+5 != 6 # True
+5 < 6 # True
+5 > 6 # False
+5 >= 5 # True
+5 <= 5 # True
+```
+
+* 簡單的多條件式
+```
+# AND
+print(False and False)
+print(True and False)
+print(False and True)
+print(True and True)
+
+# OR
+print(False or False)
+print(True or False)
+print(False or True)
+print(True or True)
+```
+```
+False
+False
+False
+True
+False
+True
+True
+True
+```
+
+* 檢查特定值是否包含在列表中, 使用 'in'
+```
+colors = ['Red', 'White', 'Blue']
+
+print('Red' in colors)
+print('Black' in colors)
+
+```
+```
+True
+False
+```
+
+
+
+### 5-3 if 語句
+
+* if 為主要判斷句(必須), elif 為附加判斷句(非必須), else 為其他判斷句(非必須)
+```
+# if
+if 5 > 4:
+	print('5 > 4')
+
+# elif
+if 3 < 2:
+	print('3 < 2')
+elif 3 > 2:
+	print('3 > 2')
+
+# else 
+if 99 > 100:
+	print('99 > 100')
+else:
+	print('99 < 100')
+
+# if elif else
+if 5 > 5:
+	print('5 > 5')
+elif 5 < 5:
+	print('5 < 5')
+else:
+	print('5 == 5')
+```
+```
+5 > 4
+3 > 2
+99 < 100
+5 == 5
+```
+
+### 5-4 使用if語句處理列表
+
+* 使用列表再使用 if語句做判斷
+```
+colors = ['Red', 'Black', 'White', 'Blue', 'Green']
+
+for color in colors:
+	if color == 'White':
+		print('color is ' + color)
+	else:
+		print('I don\'t know this.')
+```
+```
+I don't know this
+I don't know this
+color is White
+I don't know this
+I don't know this
+```
