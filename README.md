@@ -454,7 +454,6 @@ print(fruits)
 * 行長, Python程序員建議每航不超過 80字符, 注釋不超過 72字符
 * 空行, 程序的不同部分應該使用空行分開, 盡量不使用一行以上的空行做分隔
 
-
 ## 第五章 if 语句
 
 ### 5-1 一個簡單的範例
@@ -525,8 +524,6 @@ True
 False
 ```
 
-
-
 ### 5-3 if 語句
 
 * if 為主要判斷句(必須), elif 為附加判斷句(非必須), else 為其他判斷句(非必須)
@@ -590,18 +587,149 @@ I don't know this
 * 形式 { key:value }
 ```
 PC = {'CPU': 'I7', 'RAM': '16GB'}
-
 print(PC)
+```
+```
+{'CPU': 'I7', 'RAM': '16GB'}
+```
+
+### 6-2 使用字典
+
+* 訪問字典中的值, key值大小寫有區分
+```
+PC = {'CPU': 'I7', 'RAM': '16GB'}
 print(PC['CPU'])
 print(PC['RAM'])
 ```
 ```
-{'CPU': 'I7', 'RAM': '16GB'}
 I7
 16GB
 ```
 
-### 6-2 使用字典
+* 添加鍵, dictionary['key'] = value
+```
+PC = {'CPU': 'I7', 'RAM': '16GB'}
+PC['ROM'] = '2TB HDD'
+print(PC)
+```
+```
+{'CPU': 'I7', 'RAM': '16GB', 'ROM': '2TB HDD'}
+```
+
+* 創建一個空字典
+```
+PC = {}
+print(PC)
+```
+```
+{}
+```
+
+* 修改字典中的質, dictionary['key'] = new_value
+```
+Car = { 'Logo' : 'BVW' }
+print(Car)
+
+Car['Logo'] = 'Benz'
+print(Car)
+```
+
+* 刪除鍵值, del
+```
+PC = {'CPU': 'I7', 'RAM': '16GB'}
+
+del PC['RAM']
+
+print(PC)
+```
+```
+{'CPU': 'I7'}
+```
+
+
+### 6-3 遍歷字典
+
+* 使用 for in dictionary.items() 遍歷字典的 key、value
+```
+PC = {'CPU': 'I7', 'RAM': '16GB', 'ROM': '2TB HDD'}
+
+for key, value in PC.items():
+	print(key + ' : ' + value)
+```
+```
+CPU : I7
+RAM : 16GB
+ROM : 2TB HDD
+```
+
+* 使用 dictionary.keys() 取得 keys
+```
+PC = {'CPU': 'I7', 'RAM': '16GB', 'ROM': '2TB HDD'}
+
+for key in PC.keys():
+	print(key)
+```
+```
+CPU
+RAM
+ROM
+```
+
+* 使用 dictionary.values() 取得 values
+```
+PC = {'CPU': 'I7', 'RAM': '16GB', 'ROM': '2TB HDD'}
+
+for value in PC.values():
+	print(value)
+```
+```
+I7
+16GB
+2TB HDD
+```
+
+### 6-4 嵌套
+
+* 這小節主要是在講, 在字典裡 key 值必須為字串或數字外, value 是可意放下任何型態的東西, 以下作個簡單的範例
+
+```
+template = {
+	'interger' : 1,
+	'string' : 'word',
+	'list' : ['a', 'b', 'c', 'd'],
+	'tuple' : ('a', 'b', 'c', 'd'),
+	'dictionary' : {'key':'A', 'value': 'B'},
+}
+
+for key, value in template.items():
+	print(key + ' => ' + str(type(value)))
+```
+```
+interger => <class 'int'>
+string => <class 'str'>
+list => <class 'list'>
+tuple => <class 'tuple'>
+dictionary => <class 'dict'>	
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

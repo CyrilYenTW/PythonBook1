@@ -1,5 +1,10 @@
-PC = {'CPU': 'I7', 'RAM': '16GB'}
+template = {
+	'interger' : 1,
+	'string' : 'word',
+	'list' : ['a', 'b', 'c', 'd'],
+	'tuple' : ('a', 'b', 'c', 'd'),
+	'dictionary' : {'key':'A', 'value': 'B'},
+}
 
-print(PC)
-print(PC['CPU'])
-print(PC['RAM'])
+for key, value in template.items():
+	print(key + ' => ' + str(type(value)))
