@@ -712,11 +712,111 @@ tuple => <class 'tuple'>
 dictionary => <class 'dict'>	
 ```
 
+## 第七章 用戶輸入和while循環
 
+### 7-1 函數 input() 的工作原理
 
+* 簡單的 input
+```
+message = input("Tell  me something, and I will repeat it back to you:")
+print(message)
+```
+```
+Tell  me something, and I will repeat it back to you: hello
+ hello
+```
 
+* 使用 int() 來獲取數值輸入
+```
+age = input('how old are you? ')
+print('(age > 18 ) ? ' + str(int(age) > 18))
+```
+```
+how old are you? 28
+(age > 18 ) ? True
+```
 
+* 使用 % 取餘數
+```
+print( 4 % 3 )
+print( 7 % 3 )
+print( 2 % 5 )
+```
+```
+1
+1
+2
+```
 
+### while 循環簡介
+
+* 簡易的 while
+```
+count = 1
+
+while(count <= 5):
+	print(count)
+	count+=1
+```
+```
+1
+2
+3
+4
+5
+```
+
+* 用判斷式實現退出機制
+```
+message = ''
+
+while message != 'quit':
+	message = input('Input keyword or "quit" to exit => ')
+	if message != 'quit':
+		print('You input : ' + message)
+	else:
+		print('Bye!!')
+```
+```
+You input : I'm Cyril
+Input keyword or "quit" to exit => quit
+Bye!!
+```
+
+* 使用 break 實現退出機制
+```
+while True:
+	message = input('Do you want to exit (y/n) ? ')
+	if message == 'y':
+		break
+print('Bye!!')
+```
+```
+Do you want to exit (y/n) ? no
+Do you want to exit (y/n) ? yes
+Do you want to exit (y/n) ? y
+Bye!!
+```
+
+* 在循環中使用 continue
+```
+num = 0
+while num < 10:
+	num += 1
+	if(num % 3 == 0):
+		continue
+	print(num)
+
+```
+```
+1
+2
+4
+5
+7
+8
+10
+```
 
 
 
