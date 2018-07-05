@@ -748,7 +748,7 @@ print( 2 % 5 )
 2
 ```
 
-### while 循環簡介
+### 7-2 while 循環簡介
 
 * 簡易的 while
 ```
@@ -818,8 +818,63 @@ while num < 10:
 10
 ```
 
+### 7-3 使用 while 循環來處理列表和字典
 
+* 在列表之間移動元素
+```
+users = ['Alex', 'Cyril', 'Adam', 'David']
+confirm_users = []
 
+while len(users) > 0:
+	temp = users.pop()
+	confirm_users.append(temp)
+
+print('users => ' + str(users))
+print('confirm_users => ' + str(confirm_users))
+```
+```
+users => []
+confirm_users => ['David', 'Adam', 'Cyril', 'Alex']
+```
+
+* 刪除包含特定值的所有列表元素
+```
+pets = ['dog', 'cat', 'rabbit', 'bird', 'dog', 'dog', 'cat']
+print(pets)
+
+while 'cat' in pets:
+	pets.remove('cat')
+
+print(pets)
+```
+```
+['dog', 'cat', 'rabbit', 'bird', 'dog', 'dog', 'cat']
+['dog', 'rabbit', 'bird', 'dog', 'dog']
+```
+
+* 使用用戶輸入來填充字典
+```
+dic = {}
+
+while True:
+	name = input('Please input your name : ')
+	word = input('Please input your favorite word :')
+	dic[name] = word
+
+	if input('Do you want to continue(y/n) ?') == 'n':
+		break
+
+print(dic)
+```
+```
+Please input your name : Cyril
+Please input your favorite word :Love
+Do you want to continue(y/n) ?y
+Please input your name : Rick
+Please input your favorite word :Yes
+Do you want to continue(y/n) ?n
+{'Cyril': 'Love', 'Rick': 'Yes'}
+```
 
 
 
