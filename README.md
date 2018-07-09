@@ -877,12 +877,162 @@ Do you want to continue(y/n) ?n
 ```
 
 
+## 第八章 函數
+
+### 8-1 定義函數
+
+* 一個簡單的函數
+```
+def great_user():
+	print("Hello!")
+
+great_user()
+```
+```
+Hello!
+```
+
+* 向函數傳遞信息
+```
+def great_user(name):
+	print("Hello, " + name.title() + "!")
+
+great_user('Cyril')
+```
+```
+Hello, Cyril!
+```
+
+### 8-2 傳遞實參
+
+* 位置參數很重要, 順序由左至右
+```
+def show_messages(msg1, msg2):
+	print(f'Firdt => {msg1}  Second => {msg2}')
+
+show_messages('A1', 'B2')
+show_messages('B2', 'A1')
+```
+```
+Firdt => A1  Second => B2
+Firdt => B2  Second => A1
+```
+
+* 關鍵字傳參數, 指定參數名則位置可打亂
+```
+def show_messages(msg1, msg2):
+	print(f'Firdt => {msg1}  Second => {msg2}')
+
+show_messages(msg1='A1', msg2='B2')
+show_messages(msg1='B2', msg2='A1')
+```
+```
+Firdt => A1  Second => B2
+Firdt => B2  Second => A1
+```	
+
+* 默認值, 在定義函式時在參數後面指定默認值
+```
+def show_messages(msg1, msg2='Z9'):
+	print(f'Firdt => {msg1}  Second => {msg2}')
+
+show_messages('A1', 'B2')
+show_messages(msg1='A1', msg2='B2')
+show_messages('A1')
+show_messages(msg1='A1')
+```
+```
+Firdt => A1  Second => B2
+Firdt => A1  Second => B2
+Firdt => A1  Second => Z9
+Firdt => A1  Second => Z9
+```
 
 
+### 8-3 返回值
+
+* 返回簡單值
+```
+def get_full_name(first_name, last_name):
+	return f'{first_name} {last_name}'
+
+print(get_full_name('Cyril', 'Yen'))
+```
+```
+Cyril Yen
+```
+
+* 返回字典
+```
+def get_name_dic(first_name, middle_name, last_name):
+	result = {}
+
+	result['first_name'] = first_name
+	result['middle_name'] = middle_name
+	result['last_name'] = last_name
+
+	return result
+
+print(get_name_dic('Cyril', '', 'Yen'))
+```
+```
+{'first_name': 'Cyril', 'middle_name': '', 'last_name': 'Yen'}
+```
+
+* 結合使用函數及迴圈
+```
+def get_full_name(first_name, last_name):
+	return f'{first_name.title()} {last_name.title()}'
 
 
+while True:
+	fName = input('First Name: ')
+	lName = input('Last Name: ')
 
+	print(f'Hello, {get_full_name(fName, lName)} \n')
 
+```
+```
+First Name: Cyril
+Last Name: Yen
+Hello, Cyril Yen
+
+First Name: Mei
+Last Name: Chen
+Hello, Mei Chen
+```
+
+### 8-4 傳遞列表
+
+* 在函數中修改列表
+```
+def make_product(make_list, done_list):
+	while make_list:
+		temp = make_list.pop()
+		print('I\'m Making ' + temp)
+		done_list.append(temp)
+
+make_list = ['Sandwich', 'Sala', 'Pasta', 'Pizza']
+done_list = []
+
+print('make_list => ' + str(make_list))
+print('done_list => ' + str(done_list))
+
+make_product(make_list, done_list)
+
+print('make_list => ' + str(make_list))
+print('done_list => ' + str(done_list))
+```
+```
+make_list => ['Sandwich', 'Sala', 'Pasta', 'Pizza']
+done_list => []
+I'm Making Pizza
+I'm Making Pasta
+I'm Making Sala
+I'm Making Sandwich
+make_list => []
+done_list => ['Pizza', 'Pasta', 'Sala', 'Sandwich']
+```
 
 
 
