@@ -106,10 +106,10 @@ show_magicians(magicians)
 8-10 了不起的魔术师 ：在你为完成练习8-9而编写的程序中，编写一个名为make_great() 的函数，对魔术师列表进行修改，在每个魔术师的名字中都加入字样“the Great”。调用函数show_magicians() ，确认魔术师列表确实变了。
 '''
 def make_great(magicians):
-	result = []
+	index = 0
 	for name in magicians:
-		result.append('The Great ' + name)
-	magicians = result
+		magicians[index] = 'The Great ' + name
+		index += 1
 
 make_great(magicians)
 show_magicians(magicians)
@@ -120,3 +120,81 @@ show_magicians(magicians)
 	 列表，并将其存储到另一个列表中。分别使用这两个列表来调用show_magicians() ，确认一个列表包含的是原来的魔术师名字，而另一个列表包含的是添加了字
 	 样“the Great”的魔术师名字。
 '''
+magicians_01 = magicians[0:]
+magicians_02 = magicians[0:]
+
+make_great(magicians_01)
+make_great(magicians_02[:])
+
+print(magicians_01)
+print(magicians_02)
+
+
+'''
+8-12 三明治 ：编写一个函数，它接受顾客要在三明治中添加的一系列食材。这个函数只有一个形参（它收集函数调用中提供的所有食材），并打印一条消息，对顾客
+	 点的三明治进行概述。调用这个函数三次，每次都提供不同数量的实参。
+'''
+def custom_sandwich(*ingredients):
+	print(f'ingredients => {ingredients}')
+
+custom_sandwich('Apple', 'Banana', 'Orange')
+custom_sandwich('vegetable', 'tomoto')
+custom_sandwich('ham', 'tomoto')
+
+
+'''
+8-13 用户简介 ：复制前面的程序user_profile.py，在其中调用build_profile() 来创建有关你的简介；调用这个函数时，指定你的名和姓，以及三个描述你的键-值
+	 对。
+'''
+def build_profile(first_name, last_name, **attr):
+	print(f'first name : {first_name}')
+	print(f'last_name : {last_name}')
+	for key, value in attr.items():
+		print(f'{key} : {value}')
+
+build_profile(
+	'Cyril',
+	'Yen',
+	age = '28',
+	birthday = '10/22'
+	)
+
+
+'''
+8-14 汽车 ：编写一个函数，将一辆汽车的信息存储在一个字典中。这个函数总是接受制造商和型号，还接受任意数量的关键字实参。这样调用这个函数：提供必不可
+	 少的信息，以及两个名称—值对，如颜色和选装配件。这个函数必须能够像下面这样进行调用：
+
+'''
+def car(brand, price, **others):
+	print(f'Brand : {brand}')
+	print(f'Pirce : { str(price) }')
+	for key, value in others.items():
+		print(f'{key} : {value}')
+
+car('Benz',
+	'100w',
+	color = 'Red',
+	country = 'Janpan'
+	)
+
+
+'''
+8-15 打印模型 ：将示例print_models.py中的函数放在另一个名为printing_functions.py的文件中；在print_models.py的开头编写一条import 语句，并修改这个文件以使用导
+	 入的函数。
+'''
+import ch8_function.printing_functions as f
+
+
+f.show_input('GG')
+
+
+'''
+8-16 导入 ：选择一个你编写的且只包含一个函数的程序，并将这个函数放在另一个文件中。在主程序文件中，使用下述各种方法导入这个函数，再调用它
+'''
+import ch8_function.printing_functions as f
+from ch8_function.printing_functions import show_input as f2
+from ch8_function.printing_functions import *
+
+f.show_input('G1')
+f2('G2')
+show_input('G3')

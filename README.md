@@ -1035,6 +1035,124 @@ done_list => ['Pizza', 'Pasta', 'Sala', 'Sandwich']
 ```
 
 
+### 8-5 傳遞任意數量實參
+
+* 任意數量實參, 在函數參數名前加上' * '
+```
+def show_param(*param):
+	print(type(param))
+	print(param)
+
+```
+```
+<class 'tuple'>
+('a', 'b', 'c')
+```
+
+* 結合位置實參與任意數量實參, 任意數量實參必須放在後面
+```
+def show_param(name ,*param):
+	print(str(name) + ' | ' + str(param))
+	
+show_param('Cyril', 'a', 'b', 'c')
+```
+```
+Cyril | ('a', 'b', 'c')
+```
+
+* 使用任意數量的關鍵字實參
+```
+def show_info(name , **info):
+	print('Name : ' + name)
+	for key, value in info.items():
+		print(f'{key} : {value}')
+
+show_info(
+	'Cyril',
+	age = '28',
+	birthday = '10/22'
+)
+```
+```
+Name : Cyril
+age : 28
+birthday : 10/22
+```
 
 
+### 8-6 將函數儲存在模塊中
 
+* 將 函數儲存在檔案裡, 使用 import fileName.functionName 導入
+```
+# pizza.py 
+def make_pizza(size, *toppings):
+	print(f'{size} | { str(toppings) }')
+```
+```
+import pizza 
+
+pizza.make_pizza('S', 'A', 'B', 'C')
+```
+```
+S | ('A', 'B', 'C')
+```
+
+* 導入特定的函數
+```
+# pizza.py
+
+def make_pizza(size, *toppings):
+	print(f'{size} | { str(toppings) }')
+
+def show_size(size):
+	print(size)
+
+def show_toppings(*toppings):
+	print(toppings)
+```
+```
+from pizza import show_size, show_toppings
+
+show_size('M')
+show_toppings('A', 'B', 'C')
+```
+```
+M
+('A', 'B', 'C')
+```
+
+* 使用 as 指定函數別名
+```
+from pizza import show_size as ss
+
+ss('M')
+```
+```
+M
+```
+
+* 使用 as 指定模塊別名
+```
+import pizza as ss
+
+ss.show_size('M')
+ss.show_toppings('A', 'B', 'C')
+```
+```
+M
+('A', 'B', 'C')
+```
+
+* 導入模塊中所有函數
+```
+from pizza import *
+
+make_pizza('S', '1', '2', '3')
+show_size('M')
+show_toppings('A', 'B', 'C')
+```
+```
+S | ('1', '2', '3')
+M
+('A', 'B', 'C')
+```
