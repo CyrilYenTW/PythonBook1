@@ -1,7 +1,6 @@
-import ch8_function.printing_functions as f
-from ch8_function.printing_functions import show_input as f2
-from ch8_function.printing_functions import *
+import ch9_module.User as User
+import ch9_module.Admin as Admin
 
-f.show_input('G1')
-f2('G2')
-show_input('G3')
+user = Admin.Admin('Cyril', 'Yen')
+user.privileges.show_privileges()
+

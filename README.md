@@ -1156,3 +1156,270 @@ S | ('1', '2', '3')
 M
 ('A', 'B', 'C')
 ```
+
+
+## 第九章 類
+
+### 9-1 創建和使用類
+
+* 創建 類
+```
+class Cat():
+
+	def __init__(self, name, age):
+		self.name = name
+		self.age = age
+
+	def run(self):
+		print(f'{self.name.title()} is running!!')
+
+	def sleep(self):
+		print(f'{self.name.title()} is sleeping!!')
+```
+
+* 方法 __init__(), 在 new 一個類的時候會先調用這個方法, self 形參為必要的
+
+* 根據類創建實例
+```
+my_cat = Cat('kitty', 5)
+print(type(my_cat))
+```
+```
+<class '__main__.Cat'>
+```
+
+* 訪問屬性
+```
+my_cat = Cat('kitty', 5)
+print(my_cat.name)
+print(my_cat.age)
+```
+```
+kitty
+5
+```
+
+* 調用方法
+```
+my_cat = Cat('kitty', 5)
+my_cat.run()
+my_cat.sleep()
+```
+```
+Kitty is running!!
+Kitty is sleeping!!
+```
+
+
+### 9-2 使用類和實例
+
+* 給予屬性默認值
+```
+class Car():
+	def __init__(self):
+		self.color = 'Red'
+
+	def get_color(self):
+		print(self.color)
+
+CarA = Car()
+CarA.get_color()
+```
+```
+Red
+```
+
+* 修改屬性的值
+```
+CarA = Car()
+CarA.get_color()
+
+CarA.color = 'White'
+CarA.get_color()
+```
+```
+Red
+White
+```
+
+* 通過方法修改屬性的值
+```
+class Car():
+	def __init__(self):
+		self.color = 'Red'
+
+	def get_color(self):
+		print(self.color)
+
+	def set_color(self, new_color):
+		self.color = new_color
+
+CarA = Car()
+CarA.get_color()
+CarA.set_color('White')
+CarA.get_color()
+```
+```
+Red
+White
+```
+
+
+### 9-3 繼承
+
+* 子類的方法 __init__()
+```
+class Car():
+	def __init__(self, color, brand):
+		self.color = color
+		self.brand = brand
+		self.year = '1990'
+
+	def get_color(self):
+		print(self.color)
+
+class ElectricCar(Car):
+	def __init__(self, color, brand):
+		super().__init__(color, brand)
+
+my_car = ElectricCar('Black', 'Audi')
+
+my_car.get_color()
+print(my_car.year)
+```
+```
+Black
+1990
+```
+
+* 給子類定義屬性和方法
+```
+class ElectricCar(Car):
+	def __init__(self, color, brand):
+		super().__init__(color, brand)
+		self.battery_size = '100'
+
+	def describe_battery(self):
+		print(f'Battery Size => {self.battery_size}')
+
+my_car = ElectricCar('Red', 'Benz')
+my_car.describe_battery()
+my_car.get_color()
+```
+```
+Battery Size => 100
+Red
+```
+
+* 將實例用做屬性, 指定一個屬性為類
+```
+class Battery():
+	def __init__(self, battery_size=70):
+		self.battery_size = battery_size
+
+	def describe_battary(self):
+		print(f'Battery size => {self.battery_size}')
+
+class ElectricCar(Car):
+	def __init__(self, color, brand):
+		super().__init__(color, brand)
+		self.battey = Battery()
+
+
+CarA = ElectricCar('Black', 'Benz')
+CarA.get_color()
+CarA.battey.describe_battary()
+```
+```
+Black
+Battery size => 70
+```
+
+### 9-4 導入類
+
+* 預先建好一個 Car.py 的模塊
+```
+class Car():
+	def __init__(self, color, brand):
+		self.color = color
+		self.brand = brand
+		self.year = '1990'
+
+	def get_color(self):
+		print(self.color)
+
+class Battery():
+	def __init__(self, battery_size=70):
+		self.battery_size = battery_size
+
+	def describe_battary(self):
+		print(f'Battery size => {self.battery_size}')
+
+	def get_range(self):
+		print(f'{self.battery_size}')
+
+	def upgrade_battery(self):
+		if(self.battery_size < 85):a
+			self.battery_size = 85
+
+class ElectricCar(Car):
+	def __init__(self, color, brand):
+		super().__init__(color, brand)
+		self.battery = Battery()
+```
+
+* 導入類
+```
+from Car import Car
+
+CarA = Car('Red', 'Benz')
+CarA.get_color()
+```
+```
+Red
+```
+
+* 從一個模塊導入多個類
+```
+from ch9_module.Car import Car, ElectricCar
+
+CarA = Car('Red', 'Benz')
+CarA.get_color()
+
+CarB = ElectricCar('White', 'Toyota')
+CarB.battery.get_range()
+```
+```
+Red
+70
+```
+
+* 導入整個模塊
+```
+import Car
+
+CarA = Car.Car('Red', 'Benz')
+CarA.get_color()
+
+CarB = Car.ElectricCar('White', 'Toyota')
+CarB.battery.get_range()
+```
+```
+Red
+70
+```
+
+* 導入模塊中所有的
+```
+from ch9_module.Car import *
+
+CarA = Car('Red', 'Benz')
+CarA.get_color()
+
+CarB = ElectricCar('White', 'Toyota')
+CarB.battery.get_range()
+```
+```
+Red
+70
+```
